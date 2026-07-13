@@ -14,7 +14,7 @@ $(NAME): $(OBJ)
 	ranlib $(NAME)
 
 srcs/%.o: srcs/%.c includes/ft.h
-	$(CC) $(CFLAGS) -I $(INC) -c $<-o $@
+	$(CC) $(CFLAGS) -I $(INC) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)
