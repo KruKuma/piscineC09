@@ -1,6 +1,6 @@
 NAME = libft.a
 
-CC = CC
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 INC = includes
 
