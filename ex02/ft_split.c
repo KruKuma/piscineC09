@@ -6,7 +6,7 @@
 /*   By: nfurst <nfurst@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 12:35:58 by nfurst            #+#    #+#             */
-/*   Updated: 2026/07/10 13:00:10 by nfurst           ###   ########.fr       */
+/*   Updated: 2026/07/13 14:56:49 by nfurst           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,24 +101,24 @@ char **ft_split(char *str, char *charset)
 	return (result);
 }
 
-#include <stdio.h>
-int main(int argc, char **argv)
-{
-    char **result;
-    int i;
+// #include <stdio.h>
+// int main(int argc, char **argv)
+// {
+//     char **result;
+//     int i;
 
-    if (argc != 3)
-        return (1);
-    result = ft_split(argv[1], argv[2]);
-    if (!result)
-        return (1);
-    i = 0;
-    while (result[i] != 0)
-    {
-        printf("%s\n", result[i]);
-        free(result[i]);
-        i++;
-    }
-    free(result);
-    return (0);
-}
+//     if (argc != 3)
+//         return (1);
+//     result = ft_split(argv[1], argv[2]);
+//     if (!result)
+//         return (1);
+//     i = 0;
+//     while (result[i] != 0)
+//     {
+//         printf("%s\n", result[i]);
+//         free(result[i]);
+//         i++;
+//     }
+//     free(result);
+//     return (0);
+// }
