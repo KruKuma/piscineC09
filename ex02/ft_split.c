@@ -20,7 +20,7 @@ int	ft_is_sep(char c, char *charset)
 	while (charset[i] != '\0')
 	{
 		if (charset[i] == c)
-			return (i);
+			return (1);
 		i++;
 	}
 	return (0);
@@ -61,7 +61,7 @@ char	*ft_word_dup(char *str, int len)
 	int		i;
 
 	word = malloc(sizeof(char) * (len + 1));
-	if (!word)
+	if (word == 0)
 		return (0);
 	i = 0;
 	while (i < len)
@@ -81,14 +81,14 @@ char **ft_split(char *str, char *charset)
 	int		len;
 
 	result = malloc(sizeof(char *) * (ft_word_count(str, charset) + 1));
-	if (!result)
+	if (result == 0)
 		return (0);
 	i = 0;
 	j = 0;
 	while (str[i] != '\0')
 	{
 		while (str[i] != '\0' && ft_is_sep(str[i], charset))
-		i++;
+			i++;
 		if (str[i] != '\0')
 		{
 			len = ft_word_len(&str[i], charset);
@@ -102,23 +102,23 @@ char **ft_split(char *str, char *charset)
 }
 
 // #include <stdio.h>
-// int main(int argc, char **argv)
+// int	main(int argc, char **argv)
 // {
-//     char **result;
-//     int i;
+// 	char	**result;
+// 	int		i;
 
-//     if (argc != 3)
-//         return (1);
-//     result = ft_split(argv[1], argv[2]);
-//     if (!result)
-//         return (1);
-//     i = 0;
-//     while (result[i] != 0)
-//     {
-//         printf("%s\n", result[i]);
-//         free(result[i]);
-//         i++;
-//     }
-//     free(result);
-//     return (0);
+// 	if (argc != 3)
+// 		return (1);
+// 	result = ft_split(argv[1], argv[2]);
+// 	if (result == 0)
+// 		return (1);
+// 	i = 0;
+// 	while (result[i] != 0)
+// 	{
+// 		printf("tab[%d]: %s\n", i, result[i]);
+// 		free(result[i]);
+// 		i++;
+// 	}
+// 	free(result);
+// 	return (0);
 // }
